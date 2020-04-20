@@ -2,6 +2,24 @@
   #FONTS
 \*------------------------------------*/
 
+@font-face{
+    font-family: "Clear Sans";
+    font-weight: 200;
+    src: url("../fonts/ClearSans-Light-webfont.woff") format("Woff");
+}
+
+@font-face{
+    font-family: "Clear Sans";
+    font-weight: 600;
+    src: url("../fonts/ClearSans-Medium-webfont.woff") format("Woff");
+}
+
+@font-face{
+    font-family: "Clear Sans";
+    font-weight: 400;
+    src: url("../fonts/ClearSans-Regular-webfont.woff") format("Woff");
+}
+
 /*------------------------------------*\
   #GENERIC
 \*------------------------------------*/
@@ -13,13 +31,16 @@
 */
 
 html {
-    font-size: 16px;
-    line-height: 24px;
-    font-family: Helvetica, arial, sans-serif;
+    font-size: 18px;
+    line-height: 32px;
+    font-weight: 200;
+    font-family: Clear Sans,Helvetica, arial, sans-serif;
     box-sizing: border-box;
+    color: white;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
 
 *,
 *:before,
@@ -146,16 +167,22 @@ hr {
 }
 
 a {
-    color: #1195F7;
+    color: white;
     transition: all .1s ease-in-out;
 }
 
+
 a:visited,
-a:active,
-a:hover,
+a:active{
+    color: #8EC7FF;
+}
+a:hover{
+    text-shadow: 0px 0px 4px #dbedff;
+}
 a:focus {
     color: #8EC7FF;
 }
+
 
 /*------------------------------------*\
   #OBJECTS
@@ -205,7 +232,7 @@ a:focus {
 .o-container {
     margin-left: auto;
     margin-right: auto;
-    max-width: 56.4em; /* 56.4 * 20px = 1128px */
+    max-width: 71em; /* 71 * 18px = 1278px */
 }
 
 /*
@@ -364,6 +391,82 @@ a:focus {
 /*------------------------------------*\
   #COMPONENTS
 \*------------------------------------*/
+
+.c-page{
+    background-image: linear-gradient(315deg,#061649,#0A257D);
+    background-attachment: fixed;
+}
+
+.c-logo__symbol{
+    height:32px; 
+}
+
+.c-header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.c-nav{
+    display:flex;
+}
+
+.c-nav__list{
+    display:flex;
+    align-items: center;
+}
+
+.c-nav__link{
+    text-decoration: none;
+    padding: 8px 16px;
+    text-transform: uppercase;
+    letter-spacing:1px;
+    color:white !important;
+    font-size: 14px;
+    font-weight: 200;    
+    
+}
+
+.c-link-cta{
+    text-decoration: none;
+    display: inline-block;
+    line-height: 24px;
+    padding: 16px 32px;
+    background: linear-gradient(270deg,#0053fb, #033aa7);
+    color:white !important;
+    font-weight: 400;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0px 0px 5px #1195f7;  
+}
+
+.c-link-cta-nav{
+    margin-left:16px;
+
+}
+
+.c-figure{
+    position:relative;
+    width: 100%;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.c-figure__caption{
+    line-height:15px;
+    margin-top: 8px;
+    padding-left: 6px;
+    padding-top: 1px;
+    margin-right: 8px;
+    border: 2px solid #5051db;
+    border-width: 0 4px 0 0;
+}
+
+
+
+
 
 /*------------------------------------*\
   #UTILITIES
@@ -665,9 +768,20 @@ a:focus {
 @media (min-width: 576px) {}
 */
 
-/* Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {}
-*/
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+    .c-figure__caption-absolute{
+        position: absolute;
+        top: 0;
+        right:0;
+        text-align:right;
+        background:#fff;
+        color:black;
+        padding:16px;
+        max-width:260px;
+        border-width:0 4 0 0;
+    }
+}
 
 /* Large devices (landscape tablets, desktops, 992px and up)
 @media (min-width: 992px) {}
